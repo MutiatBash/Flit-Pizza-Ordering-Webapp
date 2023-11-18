@@ -9,10 +9,9 @@ export const MobileMenu = () => {
       <div className="lg:hidden bg-white w-full space-y-4 p-3 py-6 pb-8 flex flex-col gap-3 items-center h-[60%] justify-center">
         <ul className="lg:hidden flex flex-col items-center gap-8 justify-center">
           {links.map((links) => (
-            <li className="group relative">
+            <li className="group relative"key={links.id} >
               <Link
                 href={links.url}
-                key={links.id}
                 className={`nav-item text-[#353A43] transition duration-300 ease-in text-lg font-medium ${
                   links.url ? " text-[#ff7518]" : ""
                 }`}
