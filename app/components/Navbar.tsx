@@ -3,6 +3,7 @@
 import { useState, useContext } from "react";
 // import { CartContext } from "../CartContext";
 // import Logo from '../assets/svg/logo.svg'
+import Image from "next/image"
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -49,14 +50,25 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full flex flex-col gap-3 h-full py-4 px-4 md:px-14 lg:py-6 lg:px-16 bg-white border border-b-[#C6C9CF] sticky top-0 z-20">
-      <div className="w-full flex items-center justify-between">
+    <div className="w-full gap-3 h-full py-4 px-4 md:px-14 lg:py-6 lg:px-16 bg-white sticky top-0 z-20">
+      <div className="w-full flex items-center justify-between py-4">
         <div>
-          {/* <img
-            // src={Logo}
-            alt="logo"
-          /> */}
-          <h5>Huddle</h5>
+        <Image
+        width="75"
+        height="75"
+        alt="nav image"
+        src="/pizza-logo.png"
+        className="absolute top-0 py-3"
+        /> 
+        </div>
+        <div>
+        <Image
+        width="150"
+        height="150"
+        alt="nav image"
+        src="/pizza-header.png"
+        className="absolute top-0"
+        /> 
         </div>
         <div className="flex flex-row space-x-8">
         <ul className="hidden lg:flex items-center justify-between space-x-5 lg:space-x-8">
