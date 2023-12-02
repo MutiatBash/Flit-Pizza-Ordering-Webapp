@@ -97,8 +97,9 @@ const Navbar = () => {
         <div className="flex lg:hidden flex-row gap-10 items-center justify-between">
           <Link href="/cart">
             <div className="relative">
-              <span className="text-[#ff7518] bg-red-600  py-[0.11rem] w-[fit-content] text-center h-5 px-[0.4rem] bottom-3 font-bold text-xs absolute left-3 rounded-full ">
+              <span className="text-[#fdfcfd] bg-red-600  py-[0.11rem] w-[fit-content] text-center h-5 px-[0.4rem] bottom-3 font-bold text-xs absolute left-3 rounded-full ">
                 {/* {cartItems.length} */}
+                2
               </span>
               <FontAwesomeIcon icon={faCartShopping} size="sm" style={{color:"#0056d6"}} />
             </div>
