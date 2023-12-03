@@ -41,7 +41,7 @@ export const popularDishes = [
 export const ourStrengths = [
 	{
 		id: 1,
-		icon: "/icecream.png",
+		src: "/icecream.png",
 		title: "All Kinds of Food",
 		description:
 			"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",

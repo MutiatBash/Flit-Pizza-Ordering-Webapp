@@ -17,7 +17,7 @@ const StrengthSect = () => {
 					return (
 						<StrengthCards
 							key={index}
-							image={strength.icon}
+							image={strength.src}
                             // iconStyle={20}
 							description={strength.description}
 							title={strength.title}
