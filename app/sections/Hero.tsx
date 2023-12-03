@@ -18,7 +18,7 @@ const Hero = () => {
 					<IconButton
 						icon={faCartShopping}
 						text={"ORDER NOW"}
-						className="text-white bg-[#efb64d] rounded-full capitalize mt-2"
+						className="text-white bg-[#efb64d] rounded-full upppercase mt-2"
 					/>
 				</div>
 				<div className="h- w-[45%] relative">

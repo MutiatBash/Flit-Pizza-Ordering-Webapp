@@ -24,6 +24,12 @@ interface StrengthProps {
 	iconSize?: FontAwesomeIconProps["size"];
 }
 
+interface ClientProps {
+	image: string;
+	name?: string;
+	comment?: string;
+}
+
 export const MenuCards = ({ image, description, title, price }: MenuProps) => {
 	return (
 		<div className="border rounded-lg bg-white w-full p-4 lg:py-5 flex flex-col justify-between">
@@ -89,9 +95,35 @@ export const StrengthCards = ({
 	return (
 		<div className="w-full p-4 lg:py-5 ">
 			<div className="flex flex-col gap-3 lg:gap-4 items-start">
-				{icon && (<FontAwesomeIcon icon={icon as IconProp} style={iconStyle} size={iconSize} />)}
+				{icon && (
+					<FontAwesomeIcon
+						icon={icon as IconProp}
+						style={iconStyle}
+						size={iconSize}
+					/>
+				)}
 				<h4 className="font-semibold">{title}</h4>
 				<p className="text-sm font-extralight">{description}</p>
+			</div>
+		</div>
+	);
+};
+
+export const ClientCards = ({ image, comment, name }: ClientProps) => {
+	return (
+		<div className="border rounded-lg bg-white w-full p-4 lg:py-5 flex flex-col justify-between">
+			<div className="flex flex-col gap-3 lg:gap-4 py-2 items-center text-center">
+				<Image
+					className="object-cover rounded-full"
+					src={image}
+					width={120}
+					height={70}
+					alt="client Image"
+				/>
+				<div className="flex flex-col gap-3">
+					<h3 className="font-semibold">{name}</h3>
+					<p className="text-sm font-extralight">{comment}</p>
+				</div>
 			</div>
 		</div>
 	);

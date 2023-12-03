@@ -5,7 +5,7 @@ import {popularDishes} from "../data"
 
 const PopularDishes = () => {
   return (
-		<section className="py-4 px-4 lg:py-14 md:px-16 lg:px-20">
+		<section className="py-4 px-4 lg:py-14 md:px-16 lg:px-16">
 			<div className='flex flex-col gap-2'>
                 <p className='text-red-600 font-semibold'>Popular Dishes</p>
                 <h3 className='text-xl md:text-2xl lg:text-3xl font-bold text-[#030203]'>Browse our Menu</h3>

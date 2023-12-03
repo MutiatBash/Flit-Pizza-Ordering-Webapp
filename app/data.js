@@ -68,3 +68,34 @@ export const ourStrengths = [
 			"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
 	},
 ];
+
+export const clients = [
+	{
+		id: 1,
+		src: "/client-2.jpg",
+		name: "Takar Bowa",
+		comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+			it has survived not only five centuries, but also has many leap`,
+	},
+	{
+		id: 2,
+		src: "/client-2.jpg",
+		name: "Takar Bowa",
+		comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+			it has survived not only five centuries, but also has many leap`,
+	},
+	{
+		id: 3,
+		src: "/client-3.jpg",
+		name: "Takar Bowa",
+		comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+			it has survived not only five centuries, but also has many leap`,
+	},
+	{
+		id: 4,
+		src: "/client-4.jpg",
+		name: "Takar Bowa",
+		comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+			it has survived not only five centuries, but also has many leap`,
+	},
+];

@@ -5,7 +5,7 @@ import { FontAwesomeIcon, FontAwesomeIconProps } from "@fortawesome/react-fontaw
 
 interface buttonProps {
     text:string;
-    className:string;
+    className?:string;
     onClick?:() => void;
 };
 

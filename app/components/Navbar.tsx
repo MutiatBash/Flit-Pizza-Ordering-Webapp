@@ -11,6 +11,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "./Button";
 import { MobileMenu } from "./MobileMenu";
+import { usePathname } from "next/navigation";
 
 export const links = [
   {
@@ -42,7 +43,7 @@ export const links = [
 
 const Navbar = () => {
 //   const { cartItems } = useContext(CartContext);
-//   const location = useLocation();
+  const location = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenu = () => {
@@ -76,7 +77,7 @@ const Navbar = () => {
             <li className="" key={links.id}>
               <Link
                 href={links.url}
-                className={`nav-item text-[#353A43] x-5 transition duration-300 ease-in uppercase font-medium`}
+                className={`nav-item text-[#353A43] x-5 transition duration-300 ease-in uppercase font-medium ${links.url === location ? "text-red-500" : ""}`}
               >
                 {links.text}
               </Link>
@@ -86,8 +87,8 @@ const Navbar = () => {
         <div className="hidden lg:flex flex-row gap-16 items-center justify-between">
           <Link href="/cart">
             <div className="relative">
-              <span className="text-[#ff7518] w-[fit-content] h-5 bg-red-600 py-[0.18rem] px-[0.6rem] bottom-4 font-bold text-sm absolute left-3 rounded-full ">
-                {/* {cartItems.length} */}
+              <span className="text-[#fdfcfd] w-[fit-content] h-fit bg-red-600 py-[0.18rem] px-[0.6rem] bottom-4 font-bold text-sm absolute left-3 rounded-full ">
+                {/* {cartItems.length} */} 4
               </span>
               <FontAwesomeIcon icon={faCartShopping} size="xl" style={{color:"#0056d6"}}/>
             </div>

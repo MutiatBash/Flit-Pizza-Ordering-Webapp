@@ -1,7 +1,8 @@
 import Link from "next/link"
 import Navbar from "@/app/components/Navbar"
+import Footer from "@/app/components/Footer"
 
-export default function LandingPageLayout({
+export default function PageLayout({
   children,
 }: {
   children: React.ReactNode
@@ -10,6 +11,7 @@ export default function LandingPageLayout({
     <section>
         <Navbar/>
         {children}
+        <Footer/>
     </section>
   )
 }
