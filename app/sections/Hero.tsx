@@ -5,23 +5,24 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const Hero = () => {
     return (
-			<div className=" flex lg:flex-row md:flex-col mt-10 justify-between w-full items-center py-4 px-4 lg:py-8 md:px-16 lg:px-20">
-				<div className=" w-[50%] flex flex-col space-y-3 gap-3 pt-14">
-					<h1 className="lg:text-6xl w-[80%] font-semibold lg:leading-[4.1rem]">
+			<div className=" flex flex-col lg:flex-row mt-6 lg:mt-10 justify-between w-full text-center lg:text-left items-center py-8 px-4 lg:py-8 md:px-16 lg:px-20">
+				<div className="lg:w-[50%] flex flex-col gap-3 lg:pt-14 items-center lg:items-start">
+					<h1 className="text-3xl lg:text-6xl lg:w-[80%] font-semibold lg:leading-[4.1rem]">
 						Handmade, With an Extra Pinch of{" "}
 						<span className="text-red-600">Love</span>
 					</h1>
-					<p className="w-[80%] lg:text-xl tracking-wider">
+					<p className="lg:w-[80%] lg:text-xl tracking-wider">
 						Lorem Ipsum is simply dummy text of the printing and
 						typesetting industry.
 					</p>
 					<IconButton
 						icon={faCartShopping}
+						iconSize='sm'
 						text={"ORDER NOW"}
-						className="text-white bg-[#efb64d] rounded-full upppercase mt-2"
+						className="text-white bg-[#efb64d] rounded-full upppercase mt-2 px-4"
 					/>
 				</div>
-				<div className="h- w-[45%] relative">
+				<div className="hidden lg:block w-[45%] relative">
 					{/* <div className=""> */}
 					<div className="z-20 w-full pr-20 mr-10">
 						<Image

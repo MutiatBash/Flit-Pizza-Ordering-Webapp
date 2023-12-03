@@ -23,7 +23,7 @@ export const Button: React.FC<buttonProps> = ({ text, className, onClick }) => {
       <div>
         <button
         onClick={onClick}
-          className={`w-[fit-content] py-[0.8rem] px-2  whitespace-nowrap text-base md:text-lg font-bold md:py-[0.6875rem] md:px-6  hover:shadow-md transition-all ease-in ${className}`}
+          className={`w-[fit-content] py-[0.8rem] px-5 whitespace-nowrap  font-bold md:py-[1rem] md:px-6  hover:shadow-md transition-all ease-in ${className}`}
         >
           {text}
         </button>
@@ -37,7 +37,7 @@ export const Button: React.FC<buttonProps> = ({ text, className, onClick }) => {
       <div>
         <button
         onClick={onClick}
-          className={`w-[fit-content] flex flex-row justify-between items-center space-x-2 py-[0.8rem] px-2 whitespace-nowrap text-base md:text-lg font-bold  md:py-[0.6875rem] md:px-6 hover:shadow-md transition-all ease-in ${className}`}
+          className={` flex flex-row justify-between items-center gap-x-2 py-[0.8rem] px-5 whitespace-nowrap font-bold  md:py-[1rem] md:px-6 hover:shadow-md transition-all ease-in ${className}`}
         >
             <span>{icon && <FontAwesomeIcon icon={icon} className="icon" style={iconStyle} size={iconSize}/>}</span>
          <span>{text}</span>

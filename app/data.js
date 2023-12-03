@@ -41,28 +41,28 @@ export const popularDishes = [
 export const ourStrengths = [
 	{
 		id: 1,
-		icon: faRotate,
+		icon: "/icecream.png",
 		title: "All Kinds of Food",
 		description:
 			"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
 	},
 	{
 		id: 2,
-		src: "/sandwich.jpg",
+		src: "/fan.png",
 		title: "All Kinds of Food",
 		description:
 			"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
 	},
 	{
 		id: 3,
-		src: "/hero-pizza.png",
+		src: "/smile.png",
 		title: "All Kinds of Food",
 		description:
 			"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
 	},
 	{
 		id: 4,
-		src: "/pizza-2.png",
+		src: "/location.png",
 		title: "All Kinds of Food",
 		description:
 			"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",

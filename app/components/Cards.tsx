@@ -19,9 +19,9 @@ interface MenuProps {
 interface StrengthProps {
 	title?: string;
 	description?: string;
-	icon: IconProp;
-	iconStyle?: React.CSSProperties;
-	iconSize?: FontAwesomeIconProps["size"];
+	image: string;
+	// iconStyle?: number;
+	// iconSize?: string;
 }
 
 interface ClientProps {
@@ -78,8 +78,9 @@ export const MenuCards = ({ image, description, title, price }: MenuProps) => {
 			</div>
 			<IconButton
 				icon={faCartShopping}
+				iconSize="sm"
 				text={"ORDER NOW"}
-				className="text-white bg-[#efb64d] rounded-full capitalize mt-2"
+				className="text-white bg-[#efb64d] rounded-full capitalize mt-2 px-5 "
 			/>
 		</div>
 	);
@@ -88,20 +89,12 @@ export const MenuCards = ({ image, description, title, price }: MenuProps) => {
 export const StrengthCards = ({
 	title,
 	description,
-	icon,
-	iconStyle,
-	iconSize,
+	image,
 }: StrengthProps) => {
 	return (
-		<div className="w-full p-4 lg:py-5 ">
+		<div className="w-full lg:py-5 ">
 			<div className="flex flex-col gap-3 lg:gap-4 items-start">
-				{icon && (
-					<FontAwesomeIcon
-						icon={icon as IconProp}
-						style={iconStyle}
-						size={iconSize}
-					/>
-				)}
+				<div><Image src={image} height={20} width={20} alt="icon" /></div>
 				<h4 className="font-semibold">{title}</h4>
 				<p className="text-sm font-extralight">{description}</p>
 			</div>
