@@ -72,7 +72,7 @@ export const ourStrengths = [
 export const clients = [
 	{
 		id: 1,
-		src: "/client-2.jpg",
+		src: "/client-1.jpg",
 		name: "Takar Bowa",
 		comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
 			it has survived not only five centuries, but also has many leap`,

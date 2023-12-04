@@ -20,28 +20,37 @@ interface iconButtonProps {
 
 export const Button: React.FC<buttonProps> = ({ text, className, onClick }) => {
     return (
-      <div>
-        <button
-        onClick={onClick}
-          className={`w-[fit-content] py-[0.8rem] px-5 whitespace-nowrap  font-bold md:py-[1rem] md:px-6  hover:shadow-md transition-all ease-in ${className}`}
-        >
-          {text}
-        </button>
-      </div>
-    );
+			<div>
+				<button
+					onClick={onClick}
+					className={`w-[fit-content] py-[0.8rem] px-5 whitespace-nowrap rounded-full  font-bold md:py-[1rem] md:px-6 bg-[#efb64d] hover:shadow-md transition-all ease-in ${className}`}
+				>
+					{text}
+				</button>
+			</div>
+		);
   };
  
   
   export const IconButton: React.FC<iconButtonProps> = ({ text, className, onClick, icon, iconSize, iconStyle }) => {
     return (
-      <div>
-        <button
-        onClick={onClick}
-          className={` flex flex-row justify-between items-center gap-x-2 py-[0.8rem] px-5 whitespace-nowrap font-bold  md:py-[1rem] md:px-6 hover:shadow-md transition-all ease-in ${className}`}
-        >
-            <span>{icon && <FontAwesomeIcon icon={icon} className="icon" style={iconStyle} size={iconSize}/>}</span>
-         <span>{text}</span>
-        </button>
-      </div>
-    );
+			<div>
+				<button
+					onClick={onClick}
+					className={` flex flex-row justify-between items-center gap-x-2 py-[0.8rem] rounded-full px-5 whitespace-nowrap bg-[#efb64d] font-bold  md:py-[1rem] md:px-6 hover:shadow-md transition-all ease-in ${className}`}
+				>
+					<span>
+						{icon && (
+							<FontAwesomeIcon
+								icon={icon}
+								className="icon"
+								style={iconStyle}
+								size={iconSize}
+							/>
+						)}
+					</span>
+					<span>{text}</span>
+				</button>
+			</div>
+		);
   };
