@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 import { useState, useContext } from "react";
-// import { CartContext } from "../CartContext";
-import Image from "next/image"
+import useCartState from "../store/cartState";
+import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -11,43 +11,42 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "./Button";
 import { MobileMenu } from "./MobileMenu";
 import { usePathname } from "next/navigation";
-import logo from "../../public/pizza-logo.png"
-import pizzaHeader from "../../public/pizza-header.png"
-
+import logo from "../../public/pizza-logo.png";
+import pizzaHeader from "../../public/pizza-header.png";
 
 export const links = [
-  {
-    id: 1,
-    url: "/",
-    text: "Home",
-  },
-  {
-    id: 2,
-    url: "/products",
-    text: "Products",
-  },
-  {
-    id: 3,
-    url: "/blog",
-    text: "Blog",
-  },
-  {
-    id: 4,
-    url: "/contact",
-    text: "Contact",
-  },
+	{
+		id: 1,
+		url: "/",
+		text: "Home",
+	},
+	{
+		id: 2,
+		url: "/products",
+		text: "Products",
+	},
+	{
+		id: 3,
+		url: "/blog",
+		text: "Blog",
+	},
+	{
+		id: 4,
+		url: "/contact",
+		text: "Contact",
+	},
 ];
 
 const Navbar = () => {
-//   const { cartItems } = useContext(CartContext);
-  const location = usePathname();
-  const [menuOpen, setMenuOpen] = useState(false);
+	const { items: cartItems } = useCartState();
+	const location = usePathname();
+	const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+	const handleMenu = () => {
+		setMenuOpen(!menuOpen);
+	};
 
-  return (
+	return (
 		<div className="w-full gap-3 h-full py-2 px-5 md:px-14 lg:py-3 lg:px-16 bg-white sticky top-0 z-20">
 			<div className="w-full flex items-center justify-between ">
 				<div>
@@ -86,7 +85,7 @@ const Navbar = () => {
 						<Link href="/cart">
 							<div className="relative">
 								<span className="text-[#fdfcfd] w-[fit-content] h-fit bg-red-600 py-[0.18rem] px-[0.6rem] bottom-4 font-bold text-sm absolute left-3 rounded-full ">
-									{/* {cartItems.length} */} 4
+									{cartItems.length}
 								</span>
 								<FontAwesomeIcon
 									icon={faCartShopping}
@@ -121,7 +120,7 @@ const Navbar = () => {
 			</div>
 			{menuOpen && <MobileMenu />}
 		</div>
-  );
+	);
 };
 
 export default Navbar;

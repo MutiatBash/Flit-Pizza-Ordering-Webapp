@@ -23,10 +23,10 @@ const page = () => {
 						</select>
 					</div>
 				</div>
-				<div className="grid md:grid-cols-3 py-4 lg:py-8 gap-6 lg:gap-8">
+				<div className="grid md:grid-cols-3 py-4 lg:py-8 gap-x-0 gap-y-8 lg:gap-y-12 lg:gap-x-8 h-full">
 					{popularDishes.map((popular, index) => {
 						return (
-							<Link href={`products/${popular.id}`} key={index}>
+							<Link href={`products/${popular.id}`} key={index} className="h-full">
 								<MenuCards
 									image={popular.src}
 									description={popular.description}

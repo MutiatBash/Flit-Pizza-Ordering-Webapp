@@ -1,8 +1,11 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+"use client";
+import { useState, ChangeEvent } from "react";
 import Link from "next/link";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import Footer from "@/app/components/Footer";
+import useCartState from "@/app/store/cartState";
 import { Button } from "@/app/components/Button";
 import { popularDishes } from "@/app/data";
 import Image from "next/image";
@@ -23,7 +26,18 @@ const ProductDetails = ({
 	};
 }) => {
 	const productId = Number(params.id);
+	const { addToCart } = useCartState();
+	const [quantity, setQuantity] = useState(0);
 
+	const handleAddToCart = () => {
+		addToCart(productId, quantity );
+	};
+
+	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+		const inputValue = Number(e.target.value);
+		const newQuantity = inputValue >= 0 ? inputValue : 0;
+		setQuantity(newQuantity);
+	};
 	return (
 		<section className="flex flex-col my-auto h-full">
 			<Navbar />
@@ -127,11 +141,13 @@ const ProductDetails = ({
 										</div>
 										<div className="flex flex-row gap-6 items-center">
 											<input
-												type="number"
+												value={quantity}
+												onChange={handleInputChange}
+												type="text"
 												className="border border-gray-500 p-4"
 											/>
 											<Button
-												// onClick={handleAddToCart}
+												onClick={handleAddToCart}
 												text={"Add to cart"}
 												className="text-white w-full px-10 "
 											/>

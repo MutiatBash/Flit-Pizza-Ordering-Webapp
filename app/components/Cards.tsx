@@ -32,7 +32,7 @@ interface ClientProps {
 
 export const MenuCards = ({ image, description, title, price }: MenuProps) => {
 	return (
-		<div className="border rounded-lg bg-white w-full p-4 lg:py-5 flex flex-col justify-between">
+		<div className="border rounded-lg bg-white w-full p-4 lg:py-5 flex flex-col justify-between h-full">
 			<div className="flex flex-col gap-3 lg:gap-2 py-2">
 				<Image
 					className="object-cover self-center pb-5"

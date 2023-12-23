@@ -1,71 +1,93 @@
-"use client"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+"use client";
+import React from "react";
+import useCartState from "../store/cartState";
+import Navbar from "../components/Navbar";
+import Image from "next/image";
+import { Button } from "../components/Button";
 import Link from "next/link";
-import {
-	faCircleArrowLeft,
-	faArrowLeftLong,
-	faNairaSign,
-	faCircleChevronLeft,
-	faStar,
-	faStarHalfStroke,
-} from "@fortawesome/free-solid-svg-icons";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-// import { useState, useContext } from "react";
-// import { CartContext } from "../CartContext";
-// import { products } from "../data";
-// import { Button } from "../components/Button";
+import Footer from "../components/Footer";
 
-export const FoodDetails = () => {
-	const [quantity, setQuantity] = useState(0);
-	const [selectedOption, setSelectedOption] = useState("");
-	// const { category, foodId } = useParams();
-	// const { addToCart, setCartItems } = useContext(CartContext);
-
-	// const foods = products[category];
-	// const selectedFood = foods?.find((food) => food.id === parseInt(foodId));
-	// const successful = () =>
-	// 	toast.success(`Added ${selectedFood.title} to cart`, {
-	// 		progressclassName: "bg-[#ff5718]",
-	// 	});
-	// const warning = () =>
-	// 	toast.warning(
-	// 		"Nothing has been added to cart, please increase the quantity"
-	// 	);
-
-	// function handleDrinkSelection(e) {
-	// 	setSelectedOption(e.target.value);
-	// }
-
-	// function handleAddToCart() {
-	// 	let itemAdded = false;
-	// 	if (quantity > 0) {
-	// 		addToCart({ ...selectedFood, quantity });
-	// 		itemAdded = true;
-	// 	}
-
-	// 	if (itemAdded) {
-	// 		successful();
-	// 	} else {
-	// 		warning();
-	// 	}
-	// }
-
-	// function handleQuantityIncrease() {
-	// 	setQuantity(quantity + 1);
-	// }
-	// function handleQuantityDecrease() {
-	// 	setQuantity(quantity - 1);
-	// }
+const Cart = () => {
+	const { items } = useCartState();
 
 	return (
-		<section className="p-4 py-4 md:p-10 lg:p-16 lg:py-12 flex flex-col my-auto h-full">
-			<Link href="/products">
-				<div className="py-6">
-					{/* <FontAwesomeIcon icon={faArrowLeftLong} size="xl" /> */}
-				</div>
-			</Link>
-			
+		<section className="">
+			<Navbar />
+			<div className="container mx-auto p-4 text-left flex flex-col justify-center md:py-24">
+				{items.length === 0 ? (
+					<div className="flex flex-col gap-4 items-center justify-center">
+						<p className="text-red-700 text-center md:text-[2rem] capitalize font-semibold">
+							Your cart is empty.
+						</p>
+						<Link href="/products">
+							<Button text="View Products" className="text-white" />
+						</Link>
+					</div>
+				) : (
+					<div className="flex flex-col md:flex-row justify-between items-start">
+						<table className="md:w-[68%]">
+							<thead className="">
+								<tr>
+									<th className="py-2 px-4 border-b">Product</th>
+									<th className="py-2 px-4 border-b">Name</th>
+									<th className="py-2 px-4 border-b">Extra</th>
+									<th className="py-2 px-4 border-b">Price</th>
+									<th className="py-2 px-4 border-b">Quantity</th>
+									<th className="py-2 px-4 border-b">Total</th>
+								</tr>
+							</thead>
+							<tbody>
+								{items.map((item) => {
+									const itemTotal = (
+										item?.quantity * item?.price
+									)?.toFixed(2);
+									return (
+										<tr key={item.id} className="border-b">
+											<td className="py-2 px-4">
+												<Image
+													src={item.imageUrl}
+													alt="item img"
+													width={80}
+													height={80}
+												/>
+											</td>
+											<td className="py-2 px-4">{item.title}</td>
+											<td className="py-2 px-4"></td>
+											<td className="py-2 px-4">{item.price}</td>
+											<td className="py-2 px-4">{item.quantity}</td>
+											<td className="py-2 px-4">
+												$
+												{(item?.quantity * item?.price)?.toFixed(2)}
+											</td>
+										</tr>
+									);
+								})}
+							</tbody>
+						</table>
+						<div className="bg-gray-900 w-[32%] p-10 text-white h-full flex flex-col md:gap-12">
+							<div className="flex flex-col gap-3">
+								<h3 className="uppercase font-bold ">Cart Total</h3>
+								<p className="font-semibold">
+									Subtotal: <span className="font-normal">$79.60</span>
+								</p>
+								<p className="font-semibold">
+									Discount: <span className="font-normal">$79.60</span>
+								</p>
+								<p className="font-semibold">
+									Total: <span className="font-normal">$79.60</span>
+								</p>
+							</div>
+							<Button
+								text="check out now"
+								className="uppercase w-full"
+							/>
+						</div>
+					</div>
+				)}
+			</div>
+            <Footer/>
 		</section>
 	);
 };
+
+export default Cart;
