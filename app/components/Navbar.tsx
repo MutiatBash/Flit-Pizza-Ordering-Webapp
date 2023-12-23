@@ -2,7 +2,6 @@
 
 import { useState, useContext } from "react";
 // import { CartContext } from "../CartContext";
-// import Logo from '../assets/svg/logo.svg'
 import Image from "next/image"
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -29,16 +28,11 @@ export const links = [
   },
   {
     id: 3,
-    url: "/pages",
-    text: "Pages",
-  },
-  {
-    id: 4,
     url: "/blog",
     text: "Blog",
   },
   {
-    id: 5,
+    id: 4,
     url: "/contact",
     text: "Contact",
   },
