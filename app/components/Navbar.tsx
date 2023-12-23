@@ -101,7 +101,7 @@ const Navbar = () => {
 					<Link href="/cart">
 						<div className="relative">
 							<span className="text-[#fdfcfd] bg-red-600  py-[0.11rem] w-[fit-content] text-center h-5 px-[0.4rem] bottom-3 font-bold text-xs absolute left-3 rounded-full ">
-								{/* {cartItems.length} */}2
+								{/* {cartItems.length} */}
 							</span>
 							<FontAwesomeIcon
 								icon={faCartShopping}
