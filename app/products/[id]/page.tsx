@@ -59,7 +59,7 @@ const ProductDetails = ({
 									<Image
 										alt="Product image"
 										src={product.src}
-										className="object-cover w-full h-[200px] lg:h-[500px]"
+										className="object-contain w-full h-[200px] lg:h-[500px]"
 										width={500}
 										height={400}
 									/>

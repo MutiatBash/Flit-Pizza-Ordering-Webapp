@@ -49,7 +49,7 @@ const Navbar = () => {
 	return (
 		<div className="w-full gap-3 h-full py-2 px-5 md:px-14 lg:py-3 lg:px-16 bg-white sticky top-0 z-20">
 			<div className="w-full flex items-center justify-between ">
-				<div>
+				<Link href="/home">
 					<Image
 						// width="65"
 						// height="65"
@@ -57,7 +57,7 @@ const Navbar = () => {
 						src={logo}
 						className="w-[60%] top-0 lg:w-full"
 					/>
-				</div>
+				</Link>
 				<div>
 					<Image
 						alt="nav image"

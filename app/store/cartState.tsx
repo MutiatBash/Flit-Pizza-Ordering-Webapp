@@ -194,13 +194,12 @@ const getProductDetails = (productId: number) => {
 };
 
 const useCartState = create<CartState>((set, get) => {
-	// Check if window is defined
+	
 	const isWindowDefined = typeof window !== "undefined";
 
-	// Check if localStorage is available
 	const isLocalStorageAvailable = isWindowDefined && window.localStorage;
 
-	// Try to retrieve the cart state from localStorage on initialization
+	
 	const storedCartState = isLocalStorageAvailable
 		? localStorage.getItem(getLocalStorageKey)
 		: null;
