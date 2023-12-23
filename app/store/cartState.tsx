@@ -68,8 +68,9 @@
 // Import create from zustand
 import { create } from "zustand";
 import { popularDishes } from "../data";
+// import localstor
 
-// Define the CartItem and CartState interfaces
+
 interface CartItem {
   id: number;
   quantity: number;
