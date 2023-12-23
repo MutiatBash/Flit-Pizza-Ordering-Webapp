@@ -10,11 +10,11 @@ import {
 	faStarHalfStroke,
 } from "@fortawesome/free-solid-svg-icons";
 // import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { useState, useContext } from "react";
+// import "react-toastify/dist/ReactToastify.css";
+// import { useState, useContext } from "react";
 // import { CartContext } from "../CartContext";
 // import { products } from "../data";
-import { Button } from "../components/Button";
+// import { Button } from "../components/Button";
 
 export const FoodDetails = () => {
 	const [quantity, setQuantity] = useState(0);
